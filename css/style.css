@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footerr {
+    margin-top: 65px;
+    border-top: 3px solid black;
+}
+
+.footerr-content {
+    margin-top: 65px;
+}
+
+.col-footerr-content {
+    margin-top: 65px;
+}
+
+.footerr-h5 {
+    font-weight: bold;
+}
