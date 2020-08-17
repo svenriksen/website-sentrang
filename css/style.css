@@ -40,7 +40,7 @@
 /******************************************About section********************************************/
 
 #about-section {
-    margin-top: 65px;
+    margin-top: 100px;
 }
 
 .h3-about {
@@ -54,9 +54,32 @@
 
 
 #pricing-section {
-    margin-top: 65px;
+    margin-top: 100px;
 }
 
+.row.product {
+    margin-top: 25px;
+}
+
+
+.product-card {
+    background-color:#f7f7f7;
+}
+
+.art.container-fluid{
+    margin: 0;
+    padding: 0;
+}
+
+.product-title {
+    padding-top: 15px;
+    font-size: 20px;
+}
+
+.product-detail {
+    padding-top: 5px;
+}
+    
 
 /*********************************************Footer*************************************************/
 .footerr {
