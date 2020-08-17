@@ -7,6 +7,27 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+
+/*********************************************Navbar and Header*************************************************/
+
+.navbar-brand {
+    color: black !important;
+}
+
+.nav-link {
+    color: black !important;
+}
+
+.header-img {
+    width: 100%;
+    height: 100vh;
+}
+
+.header-content {
+    
+}
+
+/*********************************************Footer*************************************************/
 .footerr {
     margin-top: 65px;
     border-top: 3px solid black;
