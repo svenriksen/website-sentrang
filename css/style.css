@@ -119,4 +119,10 @@
 
 .footerr-h5 {
     font-weight: bold;
+    font-size: 35px;
+}
+
+.item-footerr {
+    padding-top: 10px;
+    font-size: larger;
 }
