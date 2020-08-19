@@ -1,0 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/*********************************************Navbar and Header*************************************************/
+
+.navbar-brand {
+    color: black !important;
+}
+
+.nav-link {
+    color: black !important;
+}
+
+
+.header-img {
+    width: 100%;
+    height: 100vh;
+}
+
+.fixed-top.scrolled {
+    background-color: #fff !important;
+    transition: background-color 500ms linear;
+  }
+
+.text-header {
+    position: absolute;
+    top: 35%;
+}
+
+.h1-header {
+    font-size: 100px;
+}
+
+.p-header {
+    font-size: 17px;
+}
+
+/******************************************About section********************************************/
+
+#about-section {
+    margin-top: 100px;
+}
+
+.h3-about {
+    font-weight: 600;
+}
+
+.plant-about {
+    width: 100%;
+}
+/******************************************Pricing section********************************************/
+
+
+#pricing-section {
+    margin-top: 100px;
+}
+
+.row.product {
+    margin-top: 25px;
+}
+
+
+.product-card {
+    background-color:#f7f7f7;
+}
+
+.art.container-fluid{
+    margin: 0;
+    padding: 0;
+}
+
+.product-title {
+    padding-top: 15px;
+    font-size: 20px;
+}
+
+.product-detail {
+    padding-top: 5px;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 25px;
+    float: right;
+}
+
+/*********************************************Contact section*************************************************/
+
+#contact-section {
+    margin-top: 100px;
+}
+
+.contact-content{
+    font-weight: 600;
+    padding-top: 40px;
+}
+
+
+/*********************************************Footer*************************************************/
+.footerr {
+    margin-top: 65px;
+    border-top: 3px solid black;
+    margin-bottom: 50px;
+}
+
+.footerr-content {
+    margin-top: 65px;
+}
+
+.col-footerr-content {
+    margin-top: 65px;
+}
+
+.footerr-h5 {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+
+.item-footerr {
+    padding-top: 10px;
+    font-size: larger;
+}
+
+.form-control {
+    margin-top: 10px !important;
+}
+
+.form-control.text-form {
+    border: none !important;
+    border-bottom: 1px solid !important;
+}
