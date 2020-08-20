@@ -13,7 +13,7 @@ var self = module.exports = {
         console.log('Send Email<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
         try {
             const { to, subject, body} = {
-                to: "danhphan141204@gmail.com",
+                to: "trannguyensinh2004@gmail.com",
                 subject: "Contact Order",
                 body: "<p>One user wants to contact to you: </p> <br> <p>Name: " + req.body.name + "</p> <p>Email: " + req.body.email + "</p>"
             }
