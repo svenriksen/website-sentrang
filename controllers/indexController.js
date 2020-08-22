@@ -33,47 +33,102 @@ var self = module.exports = {
             return res.sendFile(path.join(`${__dirname}/../views/register.html`));
         }
 
-        if (req.method === 'POST') {
-            try {
-                const obj = {
-                    username: req.body.username,
-                    firstname: req.body.firstname,
-                    familyname: req.body.familyname,
-                    email: req.body.email,
-                    password: md5(req.body.password)
-                }
-                
-                await user.create(obj);
-                console.log('Register Successfully');
-                res.redirect('/login');
-            } catch (error) {
-                alert('Someone has used this username');
-                console.log('Register Failed');
-                res.redirect('/register');
+        // method === 'POST'
+        try {
+            const obj = {
+                username: req.body.username,
+                firstname: req.body.firstname,
+                familyname: req.body.familyname,
+                email: req.body.email,
+                password: md5(req.body.password)
             }
+            
+            await user.create(obj);
+            console.log('Register Successfully');
+            res.redirect('/login');
+        } catch (error) {
+            alert('Someone has used this username');
+            console.log('Register Failed');
+            res.redirect('/register');
         }
     },
     login: async (req, res) => {
+        if (req.session.user) return res.redirect(`/profile?id=${req.session.user._id}`);
+
         if (req.method === "GET") {
             console.log('Login<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
             return res.sendFile(path.join(`${__dirname}/../views/login.html`));
         }
 
-        if (req.method === 'POST') {
-            const obj = {
-                username: req.body.username,
-                password: md5(req.body.password)
-            }
-            
-            let correct = await user.findOne(obj);
-            if (correct) {
-                console.log('Login Done');
-                return res.send('<h3>Login Successfully</h3>');
-            }
-
-            alert('Wrong password or username');
-            console.log('Login Failed');
-            return res.redirect('/login');
+        // method === 'POST'
+        const obj = {
+            username: req.body.username,
+            password: md5(req.body.password)
         }
+        
+        let correct = await user.findOne(obj);
+        if (correct) {
+            //store information of user
+            req.session.user = {
+                _id: correct._id,
+                username: correct.username
+            }
+            console.log('Login Done');
+            return res.redirect(`/profile?id=${correct._id}`);
+        }
+
+        alert('Wrong password or username');
+        console.log('Login Failed');
+        res.redirect('/login');
+    },
+    profile: (req, res) => {
+        console.log('Profile<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
+        if (req.session.user.username === 'Admin') res.send('Admin Panel');
+        else res.send('User Page');
+    },
+    update: async (req, res) => {
+        try {
+            const filter = req.session.user;
+            var updateObj = {
+                username : req.body.username,
+                firstname : req.body.firstname,
+                familyname : req.body.familyname,
+                email : req.body.email,
+                password : md5(req.body.password)
+            }
+            let doc = await user.findOneAndUpdate(filter, {$set: updateObj}, {new: true});
+            console.log('Update Successfully!');
+        } catch (error) {
+            console.log('Update Failed. ' + error);
+            alert('Update Failed');
+        }
+        res.redirect(`/profile?id=${req.session.user._id}`);
+    },
+    logout: (req, res, next) => {
+        console.log('Logout<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
+        if (req.session) {
+            req.session.destroy((err) => {
+                if (err) return next(err);
+                console.log('Logout Complete');
+            })
+        }
+        res.redirect('/');
+    },
+    delete: async (req, res) => {
+        if (req.method === 'GET') return res.send('Delete_User Page');
+
+        // method === 'POST'
+        const filter = {
+            username: req.body.username
+        }
+        try {
+            await user.deleteOne(filter);
+            console.log('Successful Deletion');
+            alert(`You've deleted user: ${filter.username}`);
+        } catch (error) {
+            console.log('Fail Deletion. ' + error);
+            alert('Delete Failed');
+        }
+        res.redirect('/deleteAccount');
     }
 }
