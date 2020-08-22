@@ -8,6 +8,7 @@ const MongoStore = require('connect-mongo')(session);
 //connect to MongoDB
 mongoose.connect('mongodb+srv://admin:d@nhph@n141204@danhphan.kjnld.gcp.mongodb.net/server?retryWrites=true&w=majority', {useUnifiedTopology: true, useNewUrlParser: true});
 mongoose.set('useCreateIndex', true);
+mongoose.set('useFindAndModify', false);
 var db = mongoose.connection;
 
 //handle mongo error

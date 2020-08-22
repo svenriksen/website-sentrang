@@ -87,19 +87,23 @@ var self = module.exports = {
         else res.sendFile(path.join(`${__dirname}/../views/user.html`));
     },
     update: async (req, res) => {
+        if (req.method === 'GET') {
+            console.log('Edit Profile<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
+            return res.sendFile(path.join(`${__dirname}/../views/changeprofile.html`));
+        }
+
         try {
             const filter = req.session.user;
             var updateObj = {
-                username : req.body.username,
-                firstname : req.body.firstname,
-                familyname : req.body.familyname,
+                job : req.body.job,
                 email : req.body.email,
-                password : md5(req.body.password)
+                phone : req.body.phone,
+                address : req.body.address,
             }
             let doc = await user.findOneAndUpdate(filter, {$set: updateObj}, {new: true});
             console.log('Update Successfully!');
         } catch (error) {
-            console.log('Update Failed. ' + error);
+            console.log('Update Failed.');
             alert('Update Failed');
         }
         res.redirect(`/profile?id=${req.session.user._id}`);

@@ -14,7 +14,9 @@ module.exports = function (app) {
     router.post('/login', index_Controller.login);
 
     router.get('/profile', index_Controller.profile);
-    router.post('/update', index_Controller.update);
+    
+    router.get('/changeprofile', index_Controller.update);
+    router.post('/changeprofile', index_Controller.update);
     // only for admin
     router.get('/deleteAccount', index_Controller.delete);
     router.post('/deleteAccount', index_Controller.delete);
