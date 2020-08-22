@@ -1,0 +1,16 @@
+.form-group {
+    max-width: 25%;
+    margin: 15px auto;
+}
+
+.img-profile {
+    width: 75%;
+}
+
+.content {
+    margin-top: 5vh;
+}
+
+.h3-content-user {
+    margin-bottom: 40px;
+}

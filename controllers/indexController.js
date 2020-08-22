@@ -84,7 +84,7 @@ var self = module.exports = {
     profile: (req, res) => {
         console.log('Profile<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
         if (req.session.user.username === 'Admin') res.send('Admin Panel');
-        else res.send('User Page');
+        else res.sendFile(path.join(`${__dirname}/../views/user.html`));
     },
     update: async (req, res) => {
         try {

@@ -11,8 +11,8 @@
         
         
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
-        <link rel="stylesheet" type="text/css" href="./css/mix.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/mix.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -21,7 +21,7 @@
 
     <body>
         
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container"> 
                 <a class="navbar-brand" href="/">SEN TRANG</a>
 
@@ -45,8 +45,7 @@
                             
                         
                 </div>
-                <a href="/login"><button class="btn my-sm-0">Login</button></a>
-                <a href="/register"><button class="btn my-sm-0">Sign up</button></a>
+                <a href="/logout"><button class="btn my-sm-0">Logout</button></a>
                 <button class="navbar-toggler" data-target="#collapsibleNavId" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="" role="button" ><i class="fa fa-bars" aria-hidden="true" style="color:black; font-weight: lighter;"></i></span>
 
@@ -58,23 +57,29 @@
             
         </nav>
         
-        <main>
+        <main class="content">
+            <div class="container">
+                <div class="row">
+                        <div class="col-md-4 col-sm-12">
 
-            <h1 style="text-align: center; margin-top: 25vh;">Register</h1>
+                            <img class="img-profile" src="img/profile.jpg">
+                            <h2 style="margin-top: 15px;"  class="h3-content-user">
+                                Tran Nguyen Sinh
+                            </h2>
 
-            <form action="" method="POST">
-                <div class="form-group">
-                  <input type="text" class="form-control" name="username" id="" aria-describedby="usernamHelpId" placeholder="Username" required>
-                  <input type="text" class="form-control" name="firstname" id="" aria-describedby="usernamHelpId" placeholder="First name" required>
-                  <input type="text" class="form-control" name="familyname" id="" aria-describedby="usernamHelpId" placeholder="Family name" required>
-                  <input type="email" class="form-control" name="email" id="" aria-describedby="usernamHelpId" placeholder="Email" required>
-                  <input type="password" class="form-control" name="password" id="" aria-describedby="usernamHelpId" placeholder="Password" required>
-                  <input type="submit" class="form-control sub-btn" value="Continue">
+                        </div>
 
+                    <div class="col-md-8 col-sm-12 info-user">
+                        <h3 class="h3-content-user"><strong>Job : </strong>Website Developer</h3>
+                        <h3 class="h3-content-user"><strong>Email : </strong>example@email.com</h3>
+                        <h3 class="h3-content-user"><strong>Phone : </strong>0912345677</h3>
+                        <h3 class="h3-content-user"><strong>Working from : </strong>24/12/2000</h3>
+                        <h3 class="h3-content-user"><strong>Address : </strong>123 Demo Street HCMC</h3>
+                        
+                    </div>
                 </div>
-            </form>
 
-
+            </div>
         </main>
 
 
