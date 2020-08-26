@@ -53,7 +53,7 @@ var self = module.exports = {
         }
     },
     login: async (req, res) => {
-        if (req.session.user) return res.redirect(`/profile?id=${req.session.user._id}`);
+        if (req.session.user) return res.redirect(`/profile`);
 
         if (req.method === "GET") {
             console.log('Login<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
@@ -74,7 +74,7 @@ var self = module.exports = {
                 username: correct.username
             }
             console.log('Login Done');
-            return res.redirect(`/profile?id=${correct._id}`);
+            return res.redirect(`/profile`);
         }
 
         alert('Wrong password or username');
@@ -106,7 +106,7 @@ var self = module.exports = {
             console.log('Update Failed.');
             alert('Update Failed');
         }
-        res.redirect(`/profile?id=${req.session.user._id}`);
+        res.redirect(`/profile`);
     },
     logout: (req, res, next) => {
         console.log('Logout<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
