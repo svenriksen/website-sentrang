@@ -32,7 +32,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // serve static files from template
-app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname));
 
 app.use(express.urlencoded({extended: true}));
 

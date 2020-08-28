@@ -7,7 +7,7 @@ const alert = require('alert');
 var self = module.exports = {
     home : (req, res) => {
         console.log('Home page<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
-        return res.sendFile(path.join(`${__dirname}/../views/index.html`));
+        return res.sendFile(path.join(`${__dirname}/../index.html`));
     },
     sendMail : async (req, res) => {
         console.log('Send Email<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
@@ -30,7 +30,7 @@ var self = module.exports = {
     register: async (req, res) => {
         if (req.method === "GET") {
             console.log('Register<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
-            return res.sendFile(path.join(`${__dirname}/../views/register.html`));
+            return res.sendFile(path.join(`${__dirname}/../register.html`));
         }
 
         // method === 'POST'
@@ -57,7 +57,7 @@ var self = module.exports = {
 
         if (req.method === "GET") {
             console.log('Login<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
-            return res.sendFile(path.join(`${__dirname}/../views/login.html`));
+            return res.sendFile(path.join(`${__dirname}/../login.html`));
         }
 
         // method === 'POST'
@@ -84,12 +84,12 @@ var self = module.exports = {
     profile: (req, res) => {
         console.log('Profile<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
         if (req.session.user.username === 'Admin') res.send('Admin Panel');
-        else res.sendFile(path.join(`${__dirname}/../views/user.html`));
+        else res.sendFile(path.join(`${__dirname}/../user.html`));
     },
     update: async (req, res) => {
         if (req.method === 'GET') {
             console.log('Edit Profile<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
-            return res.sendFile(path.join(`${__dirname}/../views/changeprofile.html`));
+            return res.sendFile(path.join(`${__dirname}/../changeprofile.html`));
         }
 
         try {
